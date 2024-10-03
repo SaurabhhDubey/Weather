@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className="bg-[url('/weatherbk.jpg')] h-screen w-full bg-cover bg-center"> abc</div> mnbzsfmn
+      <div className="bg-[url('/weatherbk.jpg')] h-screen w-full bg-cover bg-center"> abc</div> 
     </>
   )
 }
