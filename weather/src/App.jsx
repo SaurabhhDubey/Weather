@@ -19,7 +19,7 @@ function App() {
             <li>Weather condition :</li>
           </ul>
         </div>
-        <div className='text-6xl absolute top-96 left-12'>Location :</div> gchg 
+        <div className='text-6xl absolute top-96 left-12'>Location :</div> 
       </div>
       </div> 
     </>
