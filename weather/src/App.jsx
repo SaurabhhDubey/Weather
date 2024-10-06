@@ -4,6 +4,19 @@ import viteLogo from '/vite.svg'
 
 function App() {
 
+   
+
+
+   function api(){
+    fetch("http://api.weatherapi.com/v1/current.json?key=ad28a0a28e824d16b74141613240410&q=India&aqi=no")
+    .then(res=> res.json())
+    .then(data => console.log(data.current.temp_c))
+
+   }
+   api();
+
+
+
   return (
     <>
       <div className="bg-[url('/weatherbk.jpg')] h-screen w-full bg-cover bg-center"> 
@@ -13,7 +26,7 @@ function App() {
         <button className='bg-red-800 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded absolute top-24 left-72'>Search</button>
         <div>
           <ul className='text-4xl absolute left-12 top-48'>
-            <li>Curent temperature :</li>
+            <li>Curent temperature : </li>
             <li>Humidity :</li>
             <li>Wind speed :</li>
             <li>Weather condition :</li>
