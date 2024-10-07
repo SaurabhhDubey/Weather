@@ -9,7 +9,7 @@ function App() {
 
 
    function fetchWeather(city){
-    fetch(`http://api.weatherapi.com/v1/current.json?key=ad28a0a28e824d16b74141613240410&q=${city}&aqi=no`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=ad28a0a28e824d16b74141613240410&q=${city}&aqi=no`)
     .then(res=> res.json())
     .then(data => {
       if (data.error) {
