@@ -37,33 +37,44 @@ function App() {
 
   return (
     <>
-      <div className="bg-[url('/weatherbk.jpg')] h-screen w-full bg-cover bg-center"> 
-      <div className=" w-[60rem] h-[36rem] bg-black opacity-50 border-2 border-white p-5 text-white flex items-center justify-center absolute inset-0 m-auto">
-        <span className='absolute top-4  right-58 text-5xl'>Weather</span>
-        <input type='text'
-         placeholder='Enter Your City'
-         value={location}
-         onChange={(e) => setLocation(e.target.value)}
-         className='opacity-50  absolute top-24 left-20  text-wrap text-black placeholder-gray-500  border border-gray-300 p-2 rounded'></input>
-        <button onClick={handleSearch} className='bg-red-800 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded absolute top-24 left-72'>Search</button>
+      <div className="bg-[url('/weatherbk.jpg')] h-screen w-full bg-cover bg-center flex items-center justify-center"> 
+  <div className="w-full md:w-[60rem] h-auto bg-black opacity-70 border-2 border-white p-5 text-white flex flex-col items-center justify-center relative">
+    
+    <span className='text-3xl md:text-5xl mb-6'>Weather</span>
 
-        {error ? (
-            <div className="text-2xl text-red-500 absolute top-48 left-12">{error}</div>
-          ) : weather ? (
-            <div>
-              <ul className='text-4xl absolute left-12 top-48'>
-                <li>Current temperature: {weather.temp_c}°C</li>
-                <li>Humidity: {weather.humidity}%</li>
-                <li>Wind speed: {weather.wind_kph} kph</li>
-                <li>Weather condition: {weather.condition.text}</li>
-              </ul>
-              <div className='text-6xl absolute top-96 left-12'>Location: {location}</div>
-            </div>
-          ) : (
-            <div className="text-2xl absolute top-48 left-12">Enter a city and click "Search" to get weather information.</div>
-          )}
-        </div>
+    <div className="flex flex-col md:flex-row w-full md:w-auto items-center md:justify-between">
+      <input 
+        type='text'
+        placeholder='Enter Your City'
+        value={location}
+        onChange={(e) => setLocation(e.target.value)}
+        className='w-11/12 md:w-[20rem] p-2 text-black placeholder-gray-500 border border-gray-300 rounded mb-4 md:mb-0 md:mr-4'
+      />
+      <button
+        onClick={handleSearch}
+        className='w-full md:w-auto bg-red-800 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded'>
+        Search
+      </button>
+    </div>
+
+    {error ? (
+      <div className="text-lg md:text-2xl text-red-500 mt-6">{error}</div>
+    ) : weather ? (
+      <div className="mt-6">
+        <ul className='text-lg md:text-4xl'>
+          <li>Current temperature: {weather.temp_c}°C</li>
+          <li>Humidity: {weather.humidity}%</li>
+          <li>Wind speed: {weather.wind_kph} kph</li>
+          <li>Weather condition: {weather.condition.text}</li>
+        </ul>
+        <div className='text-2xl md:text-6xl mt-6'>Location: {location}</div>
       </div>
+    ) : (
+      <div className="text-lg md:text-2xl mt-6">Enter a city and click "Search" to get weather information.</div>
+    )}
+    
+  </div>
+</div>
     </>
   );
 }
